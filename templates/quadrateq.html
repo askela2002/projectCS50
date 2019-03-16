@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quadratic equation
+{% endblock %}
+
+{% block main %}
+
+    <h4>
+	<p>Quadratic equation has the following form</p>
+    <span style="color: blue;">$$ a x ^2 + b x + c = 0,\ a \ne 0. $$</span>
+    <p> There are two main ways to solve quadratic equation:</p>
+    <p><ul>
+        <li>
+	       <span style="color: green;">1. Using discriminant: <span style="color: blue;">\( x_{1,2}=\frac{-b \pm \sqrt{D}}{2a},\ D = b^2 - 4 a c,\ D > 0\).</span></span>
+        </li>
+        <li>
+            <span style="color: red;">2. Using Vieta's formulas: <span style="color: blue;">\( x_1 \cdot x_2 =  c / a,\ x_1 + x_2 = - b / a\).</span></span>
+        </li>
+    </ul>
+    </p>
+	<p>If <span style="color: blue;">\(a = 1\)</span> Vieta's formulas take the form: <span style="color: blue;">\( x_1 \cdot x_2 = c,\ x_1 + x_2 = - b\).</span></p>
+    </h4>
+    <h6>
+    <div><button onclick="check('quadeq')">Find the solutions of quadratic equation</button></div>
+    </h6>
+
+     <h4>   To see 10 best results, please, press the following button.</h4>
+
+
+    <form action="\best" method="POST" ><button type="submit" name="Type" value="Quadratic Equations"> The best 10 results</button> </form>
+
+
+     <h4>    To see more best results, please, provide the number and press the following button.</h4>
+
+
+    <form action="\best" method="post">
+        <input type="text" name="numberOfItems" autocomplete = "off"/>
+        <button type="submit" name="Type" value="Quadratic Equations">Best results</button>
+    </form>
+
+
+{% endblock %}

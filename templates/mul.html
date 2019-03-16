@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Multiplication
+{% endblock %}
+
+{% block main %}
+
+    <h4>
+	<span style="color: blue;"><p>Multiplication is commutative: one can change the order of the terms in a sum, and the result is the same.
+	Symbolically, if a and b are any two numbers, then</p>
+    $$ a \cdot b = b \cdot a. $$</span>
+    <p> To deal with the multiplication one needs to know the multiplication table. It is possible to learn the multiplication table in a few ways:</p>
+	<p><ul>
+        <li>
+	        <a href="/static/mul_tab.jpg"> The first way</a>
+        </li>
+        <li>
+            <a href="/mulTab">The second way</a>
+        </li>
+    </ul>
+    </p>
+	<p>After the learning of the multiplication table, one may check their result.</p>
+    </h4>
+    <h6>
+    <div><button onclick="check('mul')">Check the part of multiplication table</button></div>
+    <div><button onclick="check('mul', 45)">Check full multiplication table</button></div>
+    </h6>
+
+     <h4>   To see 10 best results, please, press the following button.</h4>
+
+
+    <form action="\best" method="POST" ><button type="submit" name="Type" value="Multiplication"> The best 10 results</button> </form>
+
+
+     <h4>    To see more best results, please, provide the number and press the following button.</h4>
+
+
+    <form action="\best" method="post">
+        <input type="text" name="numberOfItems" autocomplete = "off"/>
+        <button type="submit" name="Type" value="Multiplication">Best results</button>
+    </form>
+
+
+{% endblock %}

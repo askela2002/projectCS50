@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Linear equation
+{% endblock %}
+
+{% block main %}
+
+    <h4>
+	<p>Linear equation is the simplest equation and it has the following form</p>
+    <span style="color: blue;">$$ a \cdot x = b $$</span>
+    <p> There are three possibilities:</p>
+    <p><ul>
+        <li>
+	       <span style="color: green;">1. <span style="color: blue;">\(a \ne 0\)</span>. There is a unique solution: <span style="color: blue;">\( x = b/a. \)</span></span>
+        </li>
+        <li>
+            <span style="color: red;">2. <span style="color: blue;">\(a = 0\)</span> and <span style="color: blue;">\(b \ne 0\)</span>. There are no solutions: \(x \in \varnothing\).</span>
+        </li>
+        <li>
+            <span style="color: #6a1b9a;">3. <span style="color: blue;">\(a = 0\)</span> and <span style="color: blue;">\(b = 0\)</span>. There are infinitely many solutions: \( x \in R\).</span>
+        </li>
+    </ul>
+    </p>
+	<p>Mainly there are equations of the first type. So, to solve such equation one needs to <a href="div">divide</a> \(b\) by \(a\).</p>
+    </h4>
+    <h6>
+    <div><button onclick="check('lineeq')">Find the solutions of linear equation</button></div>
+    </h6>
+
+     <h4>   To see 10 best results, please, press the following button.</h4>
+
+
+    <form action="\best" method="POST" ><button type="submit" name="Type" value="Linear Equations"> The best 10 results</button> </form>
+
+
+     <h4>    To see more best results, please, provide the number and press the following button.</h4>
+
+
+    <form action="\best" method="post">
+        <input type="text" name="numberOfItems" autocomplete = "off"/>
+        <button type="submit" name="Type" value="Linear Equations">Best results</button>
+    </form>
+
+
+{% endblock %}

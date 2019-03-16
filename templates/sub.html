@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Subtraction
+{% endblock %}
+
+{% block main %}
+
+    <h4><p> Subtraction is more complicated than <a href="add">addition</a>, but to deal with math, one needs to master subtraction.</p>
+	</p>
+    </h4>
+
+    <h4>
+        If you would like to check your abilities in operation subtraction, please, press the following button.
+    </h4>
+    <div><button onclick="check('sub', null, 1, 100)">Check the subtraction (numbers are less than 100)</button></div>
+    <div><button onclick="check('sub', null, 100, 1000)">Check the subtraction (numbers are less than 1000)</button></div>
+    <h4>
+        To see 10 best results, please, press the following button.
+    </h4>
+
+    <form action="\best" method="POST" ><button type="submit" name="Type" value="Subtraction"> The best 10 results</button> </form>
+
+    <h4>
+        To see more best results, please, provide the number and press the following button.
+    </h4>
+
+    <form action="\best" method="post">
+        <input type="text" name="numberOfItems" autocomplete = "off"/>
+        <button type="submit" name="Type" value="Subtraction">Best results</button>
+    </form>
+
+
+{% endblock %}

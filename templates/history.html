@@ -1,0 +1,65 @@
+{% extends "layout2.html" %}
+
+{% block title %}
+    Main page
+{% endblock %}
+
+{% block main %}
+<h4>All your results!</h4>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>
+                No
+            </th>
+            <th>
+                Operation
+            </th>
+            <th>
+                Problems
+            </th>
+            <th>
+                Right answers
+            </th>
+            <th>
+                Time
+            </th>
+            <th>
+                Date
+            </th>
+        </tr>
+        </thead>
+
+        <tbody>
+            {% for his in history %}
+                <tr>
+                    <th>
+                        {{ loop.index }}
+                    </th>
+                    <td>
+                        {{ his['type1'] }}
+                    </td>
+                    <td>
+                        {{ his['numberofproblems'] }}
+                    </td>
+                    <td>
+                        {{ his['correct'] }}
+                    </td>
+                    <td>
+                        {% if his['time'] > 60 %}
+                            {{ (his['time'] / 60)|round(0, 'floor')|int }} min
+                        {% endif %}
+                        {% if his['time'] > 1 %}
+                                {{ (his['time'] % 60)|round(0, 'floor')|int }} sec
+                        {% endif %}
+                            {{ ((his['time'] % 1)|round(3) * 1000)|int }} millisec
+                    </td>
+                    <td>
+                        {{ his['date2'] }}
+                    </td>
+                </tr>
+            {% endfor %}
+
+        </tbody>
+    </table>
+{% endblock %}

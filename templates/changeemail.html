@@ -1,0 +1,28 @@
+{% extends "layout2.html" %}
+
+{% block title %}
+    Change email
+{% endblock %}
+
+{% block main %}
+    <div>
+        <h5>
+            Your current email is: <span style="color: blue;">{{ oldEmail }}</span>
+        </h5>
+    </div>
+    <div>
+        <h5>
+            If you would like to change your email, please provide your NEW email and Password.
+        </h5>
+    </div>
+
+    <form action="/changeemail" method="post">
+        <div class="form-group">
+            <input class="form-control" name="newEmail" placeholder="New email" type="email" autocomplete="off"/>
+        </div>
+        <div class="form-group">
+            <input class="form-control" name="password" placeholder="Password" type="password"/>
+        </div>
+        <button class="btn btn-primary" type="submit">Change email</button>
+    </form>
+{% endblock %}

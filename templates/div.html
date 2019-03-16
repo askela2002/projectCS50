@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Division
+{% endblock %}
+
+{% block main %}
+
+    <h4><p> To deal with the division one also needs to know the multiplication table.</p>
+	<p>If you would like to repeat the multiplication table, please follow this <a href="mul">link</a>.</p>
+
+
+	<p>After the learning of the multiplication table, one may check their result.</p>
+    </h4>
+
+    <div><button onclick="check('div')">Check the division from the part of multiplication table</button></div>
+    <div><button onclick="check('div', 81)">Check the division from all multiplication table</button></div>
+
+    <h4>
+        To see 10 best results, please, press the following button.
+    </h4>
+
+    <form action="\best" method="POST" ><button type="submit" name="Type" value="Division"> The best 10 results</button> </form>
+
+    <h4>
+        To see more best results, please, provide the number and press the following button.
+    </h4>
+
+    <form action="\best" method="post">
+        <input type="text" name="numberOfItems" autocomplete = "off"/>
+        <button type="submit" name="Type" value="Division">Best results</button>
+    </form>
+
+
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Addition
+{% endblock %}
+
+{% block main %}
+
+    <h4><p> Addition is the simplest arithmetical operation.</p>
+	<span style="color: blue;"><p>Addition is commutative: one can change the order of the terms in a sum, and the result is the same.
+	Symbolically, if a and b are any two numbers, then</p>
+    $$ a + b = b + a.$$</span>
+    </h4>
+    <h4>
+        If you would like to check your abilities in operation addition, please, press the following button.
+    </h4>
+    <div><button onclick="check('add', null, 1, 100)">Check the addition (sum is less than 100)</button></div>
+    <div><button onclick="check('add', null, 100, 1000)">Check the addition (sum is less than 1000)</button></div>
+
+    <h4>
+        To see 10 best results, please, press the following button.
+    </h4>
+
+    <form action="\best" method="POST" ><button type="submit" name="Type" value="Addition"> The best 10 results</button> </form>
+
+    <h4>
+        To see more best results, please, provide the number and press the following button.
+    </h4>
+
+    <form action="\best" method="post">
+        <input type="text" name="numberOfItems" autocomplete = "off"/>
+        <button type="submit" name="Type" value="Addition">Best results</button>
+    </form>
+
+
+{% endblock %}

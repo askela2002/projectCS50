@@ -1,0 +1,28 @@
+{% extends "layout2.html" %}
+
+{% block title %}
+    Change email
+{% endblock %}
+
+{% block main %}
+    <div>
+        <h5>
+            Your current username is: <span style="color: blue;">{{ oldUsername }}</span>
+        </h5>
+    </div>
+    <div>
+        <h5>
+            If you would like to change your username, please provide your NEW username and Password.
+        </h5>
+    </div>
+
+    <form action="/changeusername" method="post">
+        <div class="form-group">
+            <input class="form-control" name="newUsername" placeholder="New username" autocomplete="off"/>
+        </div>
+        <div class="form-group">
+            <input class="form-control" name="password" placeholder="Password" type="password"/>
+        </div>
+        <button class="btn btn-primary" type="submit">Change username</button>
+    </form>
+{% endblock %}

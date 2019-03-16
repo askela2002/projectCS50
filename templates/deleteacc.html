@@ -1,0 +1,24 @@
+{% extends "layout2.html" %}
+
+{% block title %}
+    Delete Account
+{% endblock %}
+
+{% block main %}
+    <div>
+        <h5>
+            <p>If you would like to delete your account, please confirm that action and provide Password.</p>
+            <p><span style="color: red;">THIS OPERATION CANNOT BE CANCELLED!</span></p>
+        </h5>
+    </div>
+
+    <form action="/deleteacc" method="post">
+        <div class="form-group">
+            <input type="radio" name="delete"> Are you sure that you want to delete your account?<Br>
+        </div>
+        <div class="form-group">
+            <input class="form-control" name="password" placeholder="Password" type="password"/>
+        </div>
+        <button class="btn btn-danger " type="submit">Delete Account</button>
+    </form>
+{% endblock %}

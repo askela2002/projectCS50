@@ -1,0 +1,16 @@
+{% extends "layout2.html" %}
+
+{% block title %}
+    Log In
+{% endblock %}
+
+{% block main %}
+    <form action="/forgotpas" method="post">
+        <div class="form-group">
+            <input class="form-control" name="usernameOrEmail" placeholder="username or email" type="text" autocomplete="off"/>
+        </div>
+        <button class="btn btn-primary" type="submit">Get new password</button>
+    </form>
+
+
+{% endblock %}

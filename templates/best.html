@@ -1,0 +1,62 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    The best results
+{% endblock %}
+
+{% block main %}
+<h3> <div style="color: #4527a0;"> The best results in {{ operation }}!</div> </h3>
+
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>
+                Place
+            </th>
+            <th>
+                User
+            </th>
+            <th>
+                Problems
+            </th>
+            <th>
+                Right answers
+            </th>
+            <th>
+                time
+            </th>
+        </tr>
+        </thead>
+
+        <tbody>
+            {% for res in bestResults %}
+                <tr>
+                    <th>
+                        {{ loop.index }}
+                    </th>
+                    <td>
+                        {{ res['username'] }}
+                    </td>
+                    <td>
+                        {{ res['numberofproblems'] }}
+                    </td>
+                    <td>
+                        {{ res['correct'] }}
+                    </td>
+                    <td>
+                        {% if res['time'] > 60 %}
+                            {{ (res['time'] / 60)|round(0, 'floor')|int }} min
+                        {% endif %}
+                        {% if res['time'] > 1 %}
+                                {{ (res['time'] % 60)|round(0, 'floor')|int }} sec
+                        {% endif %}
+                            {{ ((res['time'] % 1)|round(3) * 1000)|int }} millisec
+
+                    </td>
+                </tr>
+            {% endfor %}
+
+        </tbody>
+    </table>
+
+{% endblock %}
